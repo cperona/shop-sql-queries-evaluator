@@ -14,19 +14,19 @@ select nombre,precio as precio_eur,precio as precio_usd from producto;
 select nombre as 'nom del producte', precio as euros, round(precio*1.1, 2) as 'dòlars' from producto;
 
 -- 6. Llista els noms (nombre) i els preus de tots els productes de la taula producto, convertint els noms a majúscula.
-select upper(nombre),precio from producto;
+select upper(nombre) as 'nombre',precio from producto;
 
 -- 7. Llista els noms (nombre) i els preus (precio) dels productes de la taula producto, convertint els noms a minúscula.
-select lower(nombre),precio from producto;
+select lower(nombre) as 'nombre',precio from producto;
 
 -- 8. Llista el nom de tots els fabricants en una columna, i en una altra columna obtingui en majúscules els dos primers caràcters del nom del fabricant (iniciales).
-select nombre,upper(nombre) from producto;
+select nombre,upper(nombre) as 'iniciales' from producto;
 
 -- 9. Llista els noms i els preus dels productes, arrodonint el valor del preu (precio)
-select nombre,round(precio) from producto;
+select nombre,round(precio) as 'precio' from producto;
 
 -- 10. Llista els noms i els preus de tots els productes (precio truncado) de la taula producto, truncant el valor del preu per a mostrar-lo sense cap xifra decimal.
-select nombre,round(precio,0) as 'precio truncado' from producto;
+select nombre,truncate(precio,0) as 'precio truncado' from producto;
 
 -- 11. Mostra una llista amb els codis dels fabricants que apareixen a la taula producto, incloent possibles repeticions.
 select codigo_fabricante from producto;
@@ -35,19 +35,19 @@ select codigo_fabricante from producto;
 select distinct codigo_fabricante from producto;
 
 -- 13. Llista els noms dels fabricants ordenats de manera ascendent
-select nombre from producto order by nombre asc;
+select nombre from fabricante order by nombre asc;
 
 -- 14. Llista els noms dels fabricants ordenats de manera descendent
-select nombre from producto order by nombre desc;
+select nombre from fabricante order by nombre desc;
 
 -- 15. Llista els noms i els preus dels productes ordenats, en primer lloc, pel nom de manera ascendent i, en segon lloc, pel preu de manera descendent.
 select nombre,precio from producto order by nombre asc, precio desc;
 
 -- 16. Retorna una llista amb les 5 primeres files de la taula fabricante.
-select * from producto limit 5;
+select * from fabricante limit 5;
 
 -- 17. Retorna una llista amb 2 files a partir de la quarta fila de la taula fabricante. La quarta fila també s'ha d'incloure en la resposta.
-select * from producto limit 2 offset 3;
+select * from fabricante limit 2 offset 3;
 
 -- 18. Llista el nom i el preu del producte més barat. (Utilitza solament les clàusules ORDER BY i LIMIT).
 select nombre,precio from producto order by precio asc limit 1;
