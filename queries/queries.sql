@@ -94,8 +94,8 @@ select producto.nombre,producto.precio,fabricante.nombre as 'fabricante' from pr
 -- 32. Retorna un llistat amb el nom del producte, el seu preu i el nom del fabricant (fabricante), per a tots els productes amb un preu igual o superior a 180 €. Ordena els resultats, primer pel preu en ordre descendent i després pel nom del producte en ordre ascendent.
 select producto.nombre,producto.precio,fabricante.nombre as 'fabricante' from producto left join fabricante on producto.codigo_fabricante=fabricante.codigo where producto.precio >= 180 order by producto.precio desc,producto.nombre asc;
 
--- 33. Retorna un llistat amb el codi i el nom de fabricant (fabricante), solament d'aquells fabricants que tenen productes associats en la base de dades.
-select codigo,nombre as 'fabricante' from fabricante where exists (select codigo_fabricante from producto where producto.codigo_fabricante=fabricante.codigo);
+-- 33. Retorna un llistat amb el codi i el nom de fabricant (nombre), solament d'aquells fabricants que tenen productes associats en la base de dades.
+select codigo,nombre as 'nombre' from fabricante where exists (select codigo_fabricante from producto where producto.codigo_fabricante=fabricante.codigo);
 
 -- 34. Retorna un llistat de tots els fabricants que existeixen en la base de dades, juntament amb els productes que té cadascun d'ells. Inclou també els fabricants que no tenen cap producte. Mostra el nom del fabricant (fabricante) i el nom del producte (producto).
 select fabricante.nombre as 'fabricante',producto.nombre as 'producto' from fabricante left join producto on fabricante.codigo=producto.codigo_fabricante;
