@@ -116,7 +116,7 @@ select nombre from producto where codigo_fabricante in (select codigo from fabri
 select nombre from producto where codigo_fabricante in (select codigo from fabricante where nombre='Hewlett-Packard') order by precio asc limit 1;
 
 -- 40. Retorna tots els productes de la base de dades que tenen un preu major o igual al producte més car del fabricant Lenovo.
-select nombre from producto where precio >= (select nombre from producto where codigo_fabricante in (select codigo from fabricante where nombre='Lenovo') order by precio desc limit 1);
+select * from producto where precio >= (select nombre from producto where codigo_fabricante in (select codigo from fabricante where nombre='Lenovo') order by precio desc limit 1);
 
 -- 41. Llista tots els productes del fabricant Asus que tenen un preu superior al preu mitjà de tots els seus productes.
 select nombre from producto where codigo_fabricante in (select codigo from fabricante where nombre='Asus') and precio > (select avg(precio) from producto);
