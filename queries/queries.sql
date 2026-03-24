@@ -20,7 +20,7 @@ select upper(nombre) as 'nombre',precio from producto;
 select lower(nombre) as 'nombre',precio from producto;
 
 -- 8. Llista el nom de tots els fabricants en una columna, i en una altra columna obtingui en majúscules els dos primers caràcters del nom del fabricant (iniciales).
-select nombre,upper(nombre) as 'iniciales' from fabricante;
+select nombre,substr(upper(nombre),1,2) as 'iniciales' from fabricante;
 
 -- 9. Llista els noms i els preus dels productes, arrodonint el valor del preu (precio)
 select nombre,round(precio) as 'precio' from producto;
