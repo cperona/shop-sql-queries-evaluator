@@ -67,8 +67,8 @@ select producto.nombre,producto.precio,fabricante.nombre as 'nombre del fabrican
 -- 23. Retorna una llista amb el codi del producte, nom del producte, codi del fabricant (codigo fabricante) i nom del fabricant (nombre fabricante), de tots els productes de la base de dades.
 select producto.codigo,producto.nombre,producto.codigo_fabricante as 'codigo fabricante',fabricante.nombre as 'nombre fabricante' from producto left join fabricante on producto.codigo_fabricante=fabricante.codigo;
 
--- 24. Retorna el nom, el preu i el nom del fabricant (fabricante), del producte més barat.
-select producto.nombre,producto.precio,fabricante.nombre as 'fabricante' from producto left join fabricante on producto.codigo_fabricante=fabricante.codigo order by producto.precio asc limit 1;
+-- 24. Retorna el nom, el preu i el nom del fabricant (fabricant), del producte més barat.
+select producto.nombre,producto.precio,fabricante.nombre as 'fabricant' from producto left join fabricante on producto.codigo_fabricante=fabricante.codigo order by producto.precio asc limit 1;
 
 -- 25. Retorna el nom del producte, el preu i el nom del seu fabricant (fabricante), del producte més car.
 select producto.nombre,producto.precio,fabricante.nombre as 'fabricante' from producto left join fabricante on producto.codigo_fabricante=fabricante.codigo order by producto.precio desc limit 1;
