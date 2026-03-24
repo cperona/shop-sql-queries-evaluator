@@ -26,3 +26,5 @@
    - Quan totes les queries estiguin validades, copia i comparteix l’URL del teu repositori al Moodle.
 
 ---
+
+#ITA.S2.02.01
