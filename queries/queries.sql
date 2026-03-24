@@ -107,7 +107,7 @@ select nombre as 'fabricante' from fabricante where codigo not in (select codigo
 select * from producto where codigo_fabricante in (select codigo from fabricante where nombre='Lenovo');
 
 -- 37. Retorna totes les dades dels productes que tenen el mateix preu que el producte més car del fabricant Lenovo. (Sense usar INNER JOIN).
-select * from producto where codigo_fabricante in (select codigo from fabricante where nombre='Lenovo') and precio = (select max(precio) from producto);
+select * from producto where codigo_fabricante in (select codigo from fabricante where nombre='Lenovo') and precio = (select max(precio) from producto where codigo_fabricante in (select codigo from fabricante where nombre='Lenovo'));
 
 -- 38. Llista el nom del producte més car del fabricant Lenovo.
 select nombre from producto where codigo_fabricante in (select codigo from fabricante where nombre='Lenovo') order by precio desc limit 1;
