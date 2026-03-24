@@ -61,7 +61,7 @@ select nombre from producto where codigo_fabricante = 2;
 -- 21. Retorna una llista amb el nom del producte, preu i nom de fabricant (nombre del fabricante) de tots els productes de la base de dades.
 select producto.nombre,producto.precio,fabricante.nombre as 'nombre del fabricante' from producto left join fabricante on producto.codigo_fabricante=fabricante.codigo;
 
--- 22. Llista tots els productes amb nom, preu i nom del fabricant (nombre del fabricante) ordenats alfabèticament.
+-- 22. Llista tots els productes amb nom, preu i nom del fabricant (nombre del fabricante) ordenats alfabèticament per fabricant.
 select producto.nombre,producto.precio,fabricante.nombre as 'nombre del fabricante' from producto left join fabricante on producto.codigo_fabricante=fabricante.codigo order by fabricante.nombre;
 
 -- 23. Retorna una llista amb el codi del producte, nom del producte, codi del fabricant (codigo fabricante) i nom del fabricant (nombre fabricante), de tots els productes de la base de dades.
