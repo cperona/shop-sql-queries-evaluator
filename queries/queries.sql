@@ -119,5 +119,5 @@ select nombre from producto where codigo_fabricante in (select codigo from fabri
 select * from producto where precio >= (select precio from producto where codigo_fabricante in (select codigo from fabricante where nombre='Lenovo') order by precio desc limit 1);
 
 -- 41. Llista tots els productes del fabricant Asus que tenen un preu superior al preu mitjà de tots els seus productes.
-select * from producto where codigo_fabricante in (select codigo from fabricante where nombre='Asus') and precio > (select avg(precio) from producto);
+select * from producto where codigo_fabricante in (select codigo from fabricante where nombre='Asus') and precio > (select avg(precio) from producto where codigo_fabricante in (select codigo from fabricante where nombre='Asus'));
 
